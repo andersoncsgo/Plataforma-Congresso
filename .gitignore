@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+/backend/venv/
+.venv/
+
+# Django
+*.log
+*.pot
+*.pyc
+media/
+db.sqlite3
+db.sqlite3-journal
+staticfiles/
+coverage.xml
+
+# VS Code
+/.vscode/
+
+# macOS
+.DS_Store
+
+# Node
+/frontend/node_modules/
+
+# Env
+.env
+.venv
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
