@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            width: 350px;
+            border-radius: 6px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #2d72d9;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #1c5fc1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Criar conta</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.first_name }}
+            {{ form.email }}
+            {{ form.username }}
+            {{ form.password }}
+            {{ form.confirm_password }}
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+</body>
+</html>
