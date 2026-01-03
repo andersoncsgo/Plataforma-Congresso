@@ -35,21 +35,23 @@ if env_file.exists():
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-^hbqanul)unud^36_^c*9^sfmlk6slvgdepl!mt25ez-^r6l=l')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'False').strip().lower() in ('1', 'true', 'yes')
-
-ALLOWED_HOSTS = [h.strip() for h in os.environ.get('ALLOWED_HOSTS', '').split(',') if h.strip()]
-
+#DEBUG = os.environ.get('DEBUG', 'False').strip().lower() in ('1', 'true', 'yes')
+DEBUG = True
+#ALLOWED_HOSTS = [h.strip() for h in os.environ.get('ALLOWED_HOSTS', '').split(',') if h.strip()]
+ALLOWED_HOSTS = ['*']
+# Mude de 'plataforma.User' para 'core.User'
+AUTH_USER_MODEL = 'core.User'
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'core.apps.CoreConfig',
+     'django.contrib.admin',
+     'django.contrib.auth',
+     'django.contrib.contenttypes',
+     'django.contrib.sessions',
+     'django.contrib.messages',
+     'django.contrib.staticfiles',
+     'core',
 ]
 
 MIDDLEWARE = [
@@ -98,18 +100,18 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-]
+         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+     },
+     {
+         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+     },
+     {
+         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+     },
+     {
+         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+     },
+ ]
 
 
 # Internationalization

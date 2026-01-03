@@ -1,1 +1,0 @@
-d:\projetos\Plataforma-Congresso\backend\venv\Scripts\activate.bat
